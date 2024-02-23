@@ -1,0 +1,83 @@
+ol {
+  list-style-type: none;
+  /* background-color: azure; */
+  width: 400px;
+}
+.head {
+  list-style-type: none;
+  width: 350px;
+}
+.input-head-date {
+  width: 200px;
+  display: inline-block;
+}
+
+.input-head-distance {
+  width: 120px;
+  display: inline-block;
+}
+.date {
+  width: 200px;
+  display: inline-block;
+}
+.distance {
+  width: 120px;
+  display: inline-block;
+}
+.Baton {
+  cursor: pointer;
+  margin: 3px;
+  display: inline-block;
+  background-color: black;
+  border-radius: 3px;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+}
+.Edit {
+  color: greenyellow;
+  background-color: rgb(173, 167, 167);
+  border-color: aquamarine;
+}
+.Delete {
+  color: rgb(255, 0, 0);
+  background-color: rgb(173, 167, 167);
+  border-color: aquamarine;
+}
+.Edit:hover::after,
+.Delete:hover::after {
+  content: attr(data-tooltip);
+  position: relative;
+  background-color: rgba(155, 147, 147, 0.637);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  bottom: 50px;
+  left: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.InputFields {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.DatePicker {
+  margin-right: 10px;
+}
+
+.InputComponent {
+  flex: 1; /* Для занимания доступного пространства на линии */
+}
+
+.All-Correct {
+  width: 30px;
+  height: 30px;
+  color: rgb(211, 174, 174);
+  background-color: black;
+  border-color: aquamarine;
+}
+.DatePicker {
+  width: 150px;
+}
