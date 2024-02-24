@@ -27,13 +27,27 @@ function App() {
 
   const handleClick = () => {
     const dateToTable = moment(currentDate).format("DD.MM.YYYY");
-    let newKey;
     if (currentKey === "") {
-      newKey = generateKey();
-      setTrains([
-        ...trains,
-        { id: 0, date: dateToTable, distance: currentDistance, key: newKey },
-      ]);
+      const existingTrain = trains.find((train) => train.date === dateToTable);
+      if (existingTrain) {
+        const updatedTrains = trains.map((train) =>
+          train.date === dateToTable
+            ? {
+                ...train,
+                distance: String(
+                  Number(train.distance) + Number(currentDistance)
+                ),
+              }
+            : train
+        );
+        setTrains(updatedTrains);
+      } else {
+        const newKey = generateKey();
+        setTrains([
+          ...trains,
+          { id: 0, date: dateToTable, distance: currentDistance, key: newKey },
+        ]);
+      }
     } else {
       setTrains(
         trains.map((train) =>
